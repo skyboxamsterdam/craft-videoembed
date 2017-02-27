@@ -3,6 +3,11 @@ namespace Craft;
 
 class VideoEmbedVariable
 {
+
+    const KEY_YOUTUBE = 'youtube';
+    const KEY_VIMEO = 'vimeo';
+    const KEY_NULLED = NULL;
+
 	/**
 	 * Take a youtube or vimeo url and return the embed url
 	 *
@@ -35,6 +40,26 @@ class VideoEmbedVariable
 		return ($this->_isYoutube($url) || $this->_isVimeo($url));
 	}
 
+    /**
+     * Determines and returns video provider
+     * @param $url
+     * @return null|string
+     */
+    public function getVideoProvider($url)
+    {
+        switch($url) {
+            case ($this->_isYoutube($url)):
+                return self::KEY_YOUTUBE;
+                break;
+
+            case ($this->_isVimeo($url)):
+                return self::KEY_VIMEO;
+                break;
+
+            default:
+                return self::KEY_NULLED;
+        }
+	}
 
 	/**
 	 * Is the url a youtube url

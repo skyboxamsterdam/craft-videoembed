@@ -21,6 +21,14 @@ Pass a YouTube or Vimeo URL to the `getEmbedUrl` method and an embed URL will be
 <iframe src="//www.youtube.com/embed/6xWpo5Dn254"></iframe>
 ```
 
+Pass a YouTube or Vimeo URL to the `getVideoProvider` method and a string containing the video providers name will be returned.
+
+```
+{{ craft.videoEmbed.getVideoProvider('https://www.youtube.com/watch?v=6xWpo5Dn254') }}
+```
+
+
+
 ***
 
 <a href="http://code.viget.com">
